@@ -9,12 +9,13 @@ class SessionAPI extends DataSource {
 
   initialize(config) {}
 
-  getSessions() {
-    return sessions
+  getSessions(args) {
+    return _.filter(sessions, args)
   }
 
   getSessionById(id) {
-    return sessions.id
+    const session = _.filter(sessions, { id: parseInt(id) })
+    return sessions[0]
   }
 }
 
