@@ -1,5 +1,6 @@
 const sessions = require('../data/sessions.json')
 const { DataSource } = require('apollo-datasource')
+const _ = require('lodash')
 
 class SessionAPI extends DataSource {
   constructor() {
@@ -10,6 +11,10 @@ class SessionAPI extends DataSource {
 
   getSessions() {
     return sessions
+  }
+
+  getSessionById(id) {
+    return sessions.id
   }
 }
 
