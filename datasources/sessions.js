@@ -15,7 +15,7 @@ class SessionAPI extends DataSource {
 
   getSessionById(id) {
     const session = _.filter(sessions, { id: parseInt(id) })
-    return sessions[0]
+    return session[0]
   }
 }
 
