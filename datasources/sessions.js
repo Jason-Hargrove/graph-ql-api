@@ -22,6 +22,12 @@ class SessionAPI extends DataSource {
     session[0].favorite = !session[0].favorite
     return session[0]
   }
+
+  addSession(session) {
+    session.id = 12
+    sessions.push(session)
+    return session
+  }
 }
 
 module.exports = SessionAPI
