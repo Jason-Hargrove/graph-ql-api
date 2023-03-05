@@ -8,20 +8,21 @@ module.exports = gql`
       description: String
       startsAt: String
       endsAt: String
-      room: Room
+      room: String
       day: String
       format: String
       track: String
       level: String
     ): [Session]
-    sessionById(id: ID): Session
+    sessionById(id: ID): SessionOrError
     speakers: [Speaker]
     speakerById(id: ID): Speaker
   }
-  enum Room {
-    EUROPA
-    SOL
-    SATURN
+  union SessionOrError = Session | Error
+  type Error {
+    code: String
+    message: String
+    token: String
   }
   type Mutation {
     toggleFavoriteSession(id: ID): Session
