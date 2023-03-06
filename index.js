@@ -23,8 +23,18 @@ const server = new ApolloServer({
     }
     return err
   },
+  engine: {
+    graphVariant: 'current',
+  },
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`graphQL running at ${url}`)
 })
+
+/* 
+TODO: If this needs to be picked back up, the next step is hooking up Apollo Studio
+- Error handling was romoved in query
+- nodemon config was added to package.json.
+- There may be a diffrent way / you make need to revert the two changes mentioned above.
+*/

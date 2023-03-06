@@ -15,5 +15,8 @@
     "apollo-server": "2.12",
     "lodash": "4.17",
     "nodemon": "2.0"
+  },
+  "nodemonConfig": {
+    "APOLLO_KEY": "put apollo key here"
   }
 }
